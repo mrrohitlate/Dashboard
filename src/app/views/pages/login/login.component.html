@@ -5,14 +5,15 @@
         <c-card-group>
           <c-card class="p-4">
             <c-card-body>
-              <form cForm>
+              <form cForm #customStylesForm="" [gutter]="3" novalidate class="needs-validation">
                 <h1>Login</h1>
                 <p class="text-medium-emphasis">Sign In to your account</p>
                 <c-input-group class="mb-3">
                   <span cInputGroupText>
                     <svg cIcon name="cilUser"></svg>
                   </span>
-                  <input autoComplete="username" cFormControl placeholder="Username" />
+                  <input cFormControl required type="text" autoComplete="username" cFormControl placeholder="Username" />
+                  <c-form-feedback [valid]="true">Looks good!</c-form-feedback>
                 </c-input-group>
                 <c-input-group class="mb-4">
                   <span cInputGroupText>

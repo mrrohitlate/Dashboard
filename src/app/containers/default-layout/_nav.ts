@@ -36,7 +36,13 @@ export const navItems: INavData[] = [
     children: [
       {
         name: 'Accordion',
-        url: '/base/accordion'
+        url: '/base/accordion',
+        children:[
+          {
+            name: 'New Component',
+            url : '/base/accordion'
+          }
+        ]
       },
       {
         name: 'Breadcrumbs',
@@ -248,14 +254,14 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Docs',
-    url: 'https://coreui.io/angular/docs/templates/installation',
+    url: 'http://www.epps-erp.com/',
     iconComponent: { name: 'cil-description' },
     attributes: { target: '_blank', class: '-text-dark' },
     class: 'mt-auto'
   },
   {
-    name: 'Try CoreUI PRO',
-    url: 'https://coreui.io/product/angular-dashboard-template/',
+    name: 'OTHER LINK',
+    url: '/',
     iconComponent: { name: 'cil-layers' },
     attributes: { target: '_blank' }
   }

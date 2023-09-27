@@ -1,0 +1,47 @@
+import { AfterViewInit, ChangeDetectorRef, ElementRef, EventEmitter, NgZone, OnChanges, OnDestroy, Renderer2, SimpleChanges } from '@angular/core';
+import { Chart, ChartConfiguration, ChartType, DefaultDataPoint } from 'chart.js';
+import * as i0 from "@angular/core";
+export declare class ChartjsComponent<TType extends ChartType = ChartType, TData = DefaultDataPoint<TType>, TLabel = unknown> implements AfterViewInit, OnDestroy, OnChanges {
+    private elementRef;
+    private ngZone;
+    private renderer;
+    private changeDetectorRef;
+    customTooltips: boolean;
+    data?: ChartConfiguration<TType, TData, TLabel>['data'];
+    height?: string | number;
+    id: string;
+    options?: ChartConfiguration<TType, TData, TLabel>['options'];
+    plugins: ChartConfiguration<TType, TData, TLabel>['plugins'];
+    redraw: string | boolean;
+    type: ChartConfiguration<TType, TData, TLabel>['type'];
+    width?: string | number;
+    wrapper: boolean;
+    readonly getDatasetAtEvent: EventEmitter<any>;
+    readonly getElementAtEvent: EventEmitter<any>;
+    readonly getElementsAtEvent: EventEmitter<any>;
+    readonly chartRef: EventEmitter<any>;
+    canvasElement: ElementRef;
+    chart: Chart<TType, TData, TLabel>;
+    get hostClasses(): {
+        'chart-wrapper': boolean;
+    };
+    constructor(elementRef: ElementRef, ngZone: NgZone, renderer: Renderer2, changeDetectorRef: ChangeDetectorRef);
+    ngAfterViewInit(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    ngOnDestroy(): void;
+    handleClick($event: MouseEvent): void;
+    chartDestroy(): void;
+    chartRender(): void;
+    chartUpdate(): void;
+    private chartUpdateOutsideAngular;
+    chartToBase64Image(): string | undefined;
+    private chartDataConfig;
+    private chartOptions;
+    private chartConfig;
+    private chartCustomTooltips;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ChartjsComponent<any, any, any>, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ChartjsComponent<any, any, any>, "c-chart", ["cChart"], { "customTooltips": { "alias": "customTooltips"; "required": false; }; "data": { "alias": "data"; "required": false; }; "height": { "alias": "height"; "required": false; }; "id": { "alias": "id"; "required": false; }; "options": { "alias": "options"; "required": false; }; "plugins": { "alias": "plugins"; "required": false; }; "redraw": { "alias": "redraw"; "required": false; }; "type": { "alias": "type"; "required": false; }; "width": { "alias": "width"; "required": false; }; "wrapper": { "alias": "wrapper"; "required": false; }; }, { "getDatasetAtEvent": "getDatasetAtEvent"; "getElementAtEvent": "getElementAtEvent"; "getElementsAtEvent": "getElementsAtEvent"; "chartRef": "chartRef"; }, never, ["*"], true, never>;
+    static ngAcceptInputType_height: string | number;
+    static ngAcceptInputType_redraw: unknown;
+    static ngAcceptInputType_width: string | number;
+}

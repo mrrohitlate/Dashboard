@@ -12,7 +12,8 @@
                   <span cInputGroupText>
                     <svg cIcon name="cilUser"></svg>
                   </span>
-                  <input cFormControl required type="text" autoComplete="username" cFormControl placeholder="Username" />
+                  <input cFormControl required type="text" autoComplete="username" cFormControl
+                    placeholder="Username" />
                   <c-form-feedback [valid]="true">Looks good!</c-form-feedback>
                 </c-input-group>
                 <c-input-group class="mb-4">
@@ -23,7 +24,7 @@
                 </c-input-group>
                 <c-row>
                   <c-col xs="6">
-                    <button cButton class="px-4" color="primary" routerLink="/Dashboard">
+                    <button cButton class="px-4" color="primary" shape="rounded-pill" routerLink="/Dashboard">
                       Login
                     </button>
                   </c-col>
@@ -41,10 +42,11 @@
               <div>
                 <h2>Sign up</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua.
+                  Why not simply require only an email address the first time around? You can always require the user to
+                  finalize sign up via email once they have experienced your service.
                 </p>
-                <button [active]="true" cButton class="mt-3" color="primary" routerLink="/register">
+                <button [active]="true" cButton class="mt-3" color="primary" shape="rounded-pill"
+                  routerLink="/register">
                   Register Now!
                 </button>
               </div>

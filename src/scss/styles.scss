@@ -21,3 +21,9 @@ $enable-rtl: true;
 
 // If you want to add something do it here
 @import "custom";
+
+//Footer Coustomizable scss
+@import "_footer.scss";
+
+//Header Coustomizable scss
+@import "_header.scss"

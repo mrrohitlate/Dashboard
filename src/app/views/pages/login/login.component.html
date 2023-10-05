@@ -5,14 +5,14 @@
         <c-card-group>
           <c-card class="p-4">
             <c-card-body>
-              <form cForm #customStylesForm="" [gutter]="3" novalidate class="needs-validation">
+              <form cForm #customStylesForm="" [formGroup]="loginForm" [gutter]="3" novalidate class="needs-validation">
                 <h1>Login</h1>
                 <p class="text-medium-emphasis">Sign In to your account</p>
                 <c-input-group class="mb-3">
                   <span cInputGroupText>
                     <svg cIcon name="cilUser"></svg>
                   </span>
-                  <input cFormControl required type="text" autoComplete="username" cFormControl
+                  <input cFormControl formControlName="username" type="text" autoComplete="username"
                     placeholder="Username" />
                   <c-form-feedback [valid]="true">Looks good!</c-form-feedback>
                 </c-input-group>
@@ -20,11 +20,11 @@
                   <span cInputGroupText>
                     <svg cIcon name="cilLockLocked"></svg>
                   </span>
-                  <input autoComplete="current-password" cFormControl placeholder="Password" type="password" />
+                  <input autoComplete="current-password" formControlName="password" cFormControl placeholder="Password" type="password" />
                 </c-input-group>
                 <c-row>
                   <c-col xs="6">
-                    <button cButton class="px-4" color="primary" shape="rounded-pill" routerLink="/Dashboard">
+                    <button cButton class="px-4" color="primary" shape="rounded-pill" (click)="loginUser()">
                       Login
                     </button>
                   </c-col>
@@ -34,6 +34,12 @@
                     </button>
                   </c-col>
                 </c-row>
+                <!-- <c-alert color="success" class="d-flex align-items-center mt-3">
+                  <svg class="bi flex-shrink-0" width="15" height="15" role="img" aria-label="Info:">
+                      <use xlink:href="#check-circle-fill" />
+                  </svg>
+                  <div>success alert with an icon</div>
+              </c-alert>  -->
               </form>
             </c-card-body>
           </c-card>
@@ -57,3 +63,4 @@
     </c-row>
   </c-container>
 </div>
+<c-toaster class="p-3" position="fixed" [placement]="placement"></c-toaster>

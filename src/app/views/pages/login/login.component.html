@@ -24,9 +24,10 @@
                 </c-input-group>
                 <c-row>
                   <c-col xs="6">
-                    <button cButton class="px-4" color="primary" shape="rounded-pill" (click)="loginUser()">
+                    <!-- <button cButton class="px-4" color="primary" shape="rounded-pill" (click)="loginUser()">
                       Login
-                    </button>
+                    </button> -->
+                    <button href="/" cButton class="bn5" shape="rounded-pill" (click)="loginUser()">Login</button>
                   </c-col>
                   <c-col class="text-right" xs="6">
                     <button cButton class="px-0" color="link">
@@ -43,15 +44,15 @@
               </form>
             </c-card-body>
           </c-card>
-          <c-card [ngStyle]="{'width.%': 44}" class="text-white bg-primary py-5">
+          <c-card [ngStyle]="{'width.%': 44}" class="text-white bg-danger py-5">
             <c-card-body class="text-center">
               <div>
-                <h2>Sign up</h2>
-                <p>
+                <h2 class="text-dark h2">Sign up</h2>
+                <p class="text-white">
                   Why not simply require only an email address the first time around? You can always require the user to
                   finalize sign up via email once they have experienced your service.
                 </p>
-                <button [active]="true" cButton class="mt-3" color="primary" shape="rounded-pill"
+                <button [active]="true" cButton class="bn5" color="danger" shape="rounded-pill"
                   routerLink="/register">
                   Register Now!
                 </button>

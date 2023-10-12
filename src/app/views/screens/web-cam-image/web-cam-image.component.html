@@ -1,0 +1,19 @@
+<c-row ngPreserveWhitespaces>
+    <c-col xs="12">
+    <div>
+        <button cButton color="primary" (click)="checkPermissions()">Check the webcam permissions</button>
+        <p *ngIf="status">Status here: {{status}}</p>
+    </div>
+    <div *ngIf="stream">
+        <!-- web cam image will be shown here -->
+        <webcam [trigger]="$trigger" (imageCapture)="snapshot($event)" [imageQuality]="1"></webcam>
+        <button cButton color="primary" (click)="captureImage()">{{btnLabel}}</button>
+    </div>
+    
+    <!-- Preview section -->
+    <div *ngIf="previewImage">
+        <img [src]="previewImage" height="250" width="350">
+        <button cButton color="primary" (click)="proceed()">Proceed</button>
+    </div>
+    </c-col>
+</c-row>
